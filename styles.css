@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* navbar css */
+
+.navbar {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+}
+
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.navbar_logo {
+    color: #e08515;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.navbar_item {
+    height: 80px;
+}
+
+.navbar_links {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: auto;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 35px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #e08515;
+    color: white;
+}
+
+.button:hover {
+    background: #499abd;
+    transition: all 0.3s ease;
+}
+
+.navbar_links:hover {
+    color:#97becf; 
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .navbar_container {
+        display: flex;
+        height: 80px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar_menu {
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: -1000px;
+        transition: all 0.5s ease;
+    }
+
+    .navbar_menu.active {
+        background: #131313;
+        top: 100%;
+        width: 100%;
+        transition: all 0.5s ease;
+        z-index: 2;
+        font-size: 1.4rem;
+        justify-content: center;
+        
+    }
+
+    .navbar_logo {
+        padding-left: 30px;
+    }
+
+    .navbar_toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #e08515;
+    }
+
+    .navbar_links {
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar_button {
+        display: block;
+        padding-bottom: 2rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        width: 100%;
+        height: 80px;
+        margin: 0;
+    }
+
+    .navbar_toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+}
+
+/* hero css */
+
+.hero {
+    background-image: url(images/horses.jpg);
+    background-size: cover;
+    height: 300px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 2rem;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+h2 {
+    margin: 0;
+    padding-left: 2rem;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@media screen and (max-width: 767px) {
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/* film section css */
+
+.search_section {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem;
+    padding: 4px 10px;
+}
+
+#search_button {
+    width: 80px;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    
+}
+
+#search_input {
+    background-color: #e9bc412c;
+    color: rgba(11, 11, 11, 0.803);
+    border-radius: 4px;
+}
+
+#search_input::placeholder {
+    color: rgba(18, 17, 17, 0.511);
+  }
+
+.container_films {
+    display: flex;
+    background-color: #e9bc412c;
+    padding-bottom: 2rem;
+}
+
+.image_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 1rem;
+} 
+
+
+.image_container {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin: 0 1.2rem; 
+}
+
+.image_container:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+h3 {
+    margin-bottom: 6px;
+    font-family: "Titillium Web", sans-serif;
+    color: #131313;
+}
+
+p {
+    margin: 0 0 2px 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media screen and (max-width: 767px) {
+
+    .row {
+        flex-direction: column;
+        margin: 1rem 1rem;
+    }
+
+    .image_container {
+        margin: 1rem;
+        } 
+}
+
+@media screen and (max-width: 500px) {
+
+    .container_films {
+        flex-direction: column;
+        align-items: center;
+       }
+
+
+    .search_section {
+        margin: 2rem 0 0 0;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .search_section {
+        align-items: center;
+    }
+    
+}
+
+/* footer css */
+
+.footer_section {
+    width: 100%;
+    background-color: black;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.footer {
+    display: block;
+}
+
+.footerlink {
+    color: white;
+    text-decoration: none;
+}
+
+.footerlink:hover {
+    color:#97becf; 
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+
+    .footer_section {
+        flex-direction: column;
+    }
+
+}
